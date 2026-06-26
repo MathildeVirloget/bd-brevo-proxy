@@ -1,0 +1,9 @@
+{
+  "name": "bd-brevo-proxy",
+  "version": "1.0.0",
+  "description": "Proxy Netlify pour l'API Brevo — Billets Discount",
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "node-fetch": "^2.6.9"
+  }
+}
