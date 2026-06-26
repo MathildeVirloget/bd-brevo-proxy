@@ -8,10 +8,10 @@ exports.handler = async (event) => {
   };
 
   const BREVO_KEY = process.env.BREVO_API_KEY;
-  if (!BREVO_KEY) return { statusCode: 500, body: "Missing BREVO_API_KEY" };
+  if (!BREVO_KEY) return { statusCode: 500, body: JSON.stringify({ error: "Missing BREVO_API_KEY" }) };
 
   try {
-    const res = await fetch("https://api.brevo.com/v3/emailCampaigns/images?count=50&sort=desc", {
+    const res = await fetch("https://api.brevo.com/v3/files?fileStatus=0", {
       headers: { "api-key": BREVO_KEY, "Accept": "application/json" }
     });
     const data = await res.json();
